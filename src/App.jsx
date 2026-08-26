@@ -1,10 +1,12 @@
 import React from 'react'
-import { Header, Hero } from './Components'
+import { Header, Hero, Trending, Popular } from './Components'
 function App() {
   return (
     <>
-     <Header />
-     <Hero />
+      <Header />
+      <Hero />
+      <Trending />
+      <Popular />
     </>
   )
 }

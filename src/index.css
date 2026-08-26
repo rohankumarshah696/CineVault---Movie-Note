@@ -1,6 +1,15 @@
 @import "tailwindcss";
 
 
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Edge, Safari */
+}
+
 .active{
 border-bottom: 0.1em solid rgb(123, 123, 8);
 }

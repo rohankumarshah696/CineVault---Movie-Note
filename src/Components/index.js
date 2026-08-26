@@ -1,12 +1,18 @@
 import Nav from "./Header/Nav";
-import Hero from "./Hero";
 import Logo from "./Header/Logo";
 import Header from "./Header/Header";
 import SearchIcon from "./Header/SearchIcon";
+import Button from "./HeroSetup/Button";
+import Hero from "./HeroSetup/Hero";
+import Trending from './Trending'
+import Popular from "./Popular";
 export{
     Nav,
     Hero,
     Logo,
     Header,
-    SearchIcon
+    SearchIcon,
+    Button,
+    Trending,
+    Popular
 }
