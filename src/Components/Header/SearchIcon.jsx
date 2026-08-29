@@ -1,10 +1,10 @@
 import React from 'react'
-
+import { CiSearch } from "react-icons/ci";
 function SearchIcon() {
   return (
-    <div>
-      <button className='bg-blue-700 rounded-xl cursor-pointer text-white h-10 px-2 py-1'>Search</button>
-    </div>
+      <button className=' rounded-xl cursor-pointer text-white text-2xl w-fit'>
+        <CiSearch />
+      </button>
   )
 }
 

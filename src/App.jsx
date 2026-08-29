@@ -6,6 +6,7 @@ function App() {
       <Header />
       <Hero />
       <Trending />
+      <hr className='w-7/8 mx-auto text-gray-400 shadow-2xl'/>
       <Popular />
     </>
   )

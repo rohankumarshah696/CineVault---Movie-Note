@@ -3,7 +3,7 @@ import React from 'react'
 function Logo() {
     return (
         <div className='cursor-pointer'>
-            <span className='text-2xl md:text-4xl'
+            <span className={`text-2xl md:text-4xl`}
                 style={{
                     fontFamily: "var(--font-display)",
                     letterSpacing: "0.06em",

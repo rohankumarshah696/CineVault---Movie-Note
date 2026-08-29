@@ -6,6 +6,7 @@ import Button from "./HeroSetup/Button";
 import Hero from "./HeroSetup/Hero";
 import Trending from './Trending'
 import Popular from "./Popular";
+import Hamburger from "./Header/Hamburger";
 export{
     Nav,
     Hero,
@@ -14,5 +15,6 @@ export{
     SearchIcon,
     Button,
     Trending,
-    Popular
+    Popular,
+    Hamburger
 }
