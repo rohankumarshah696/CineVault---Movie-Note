@@ -1,23 +1,29 @@
 import React, { useState } from 'react'
-import { Hamburger, Logo, Nav, SearchIcon } from '../index'
+import { Hamburger, Logo, Nav, SearchIcon, SearchInput } from '../index'
 import { useSelector } from 'react-redux'
 function Header() {
-    const select = useSelector(state => state.hamburgerMenu.value)
+    const nav = useSelector(store => store.hamburgerMenu.value)
+    const searchInput = useSelector(store => store.search.searchState)
     return (
-        <div className='h-fit w-full flex flex-col'>
-            <header className='flex px-5 justify-between items-center h-15 w-full'>
+        <header className='h-fit w-full flex flex-col'>
+            <div className='flex px-5 justify-between items-center h-15 w-full'>
                 <Hamburger />
                 <Logo />
-                {select ? <Nav className=" hidden md:flex " /> : null}
+                {
+                    nav ? <Nav className=" hidden md:flex " /> : null
+                }
+                {
+                    searchInput ? <SearchInput /> : null
+                }
                 <SearchIcon />
-            </header>
+            </div>
             {
                 <Nav
-                    className={`overflow-hidden flex justify-center items-center flex-col transition-all duration-500  ${select ? "max-h-0 opacity-0 " : "max-h-40 opacity-100 py-1"
+                    className={`overflow-hidden flex justify-center items-center flex-col transition-all duration-500  ${nav ? "max-h-0 opacity-0 " : "max-h-40 opacity-100 py-1"
                         }`}
                 />
             }
-        </div>
+        </header>
     )
 }
 

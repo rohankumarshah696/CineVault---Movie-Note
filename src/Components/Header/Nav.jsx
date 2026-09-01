@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 
-function Nav({className}) {
+function Nav({ className }) {
   const select = useSelector(store => store.hamburgerMenu.value);
   const [active, setActive] = useState('Home')
   const navLinks = ["Home", "Discover", "Library"]
@@ -19,4 +19,3 @@ function Nav({className}) {
 }
 
 export default Nav
-  

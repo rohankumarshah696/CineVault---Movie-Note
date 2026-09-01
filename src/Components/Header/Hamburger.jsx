@@ -10,7 +10,7 @@ function Hamburger() {
   const select = useSelector(store => store.hamburgerMenu.value)
 
   return (
-    <button className={`md:hidden  cursor-pointer `} onClick={() => {dispatch(changeVal());}}
+    <button className={`md:hidden  cursor-pointer `} onClick={() => { dispatch(changeVal()); }}
     >
       {
         select ? <GiHamburgerMenu /> : <RxCross1 />

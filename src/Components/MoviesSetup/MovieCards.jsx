@@ -98,7 +98,7 @@ function MovieCards() {
     <div className='flex gap-2 mt-2 overflow-x-auto px-2 scrollbar-none '>
       {
         obj.map(e=>(
-          <div className=' flex flex-col h-80 w-50 rounded-sm shrink-0'>
+          <div className='cursor-pointer hover:-translate-y-2 hover:z-10 duration-200 flex flex-col h-80 w-50 rounded-sm shrink-0'>
             <img src={Thumbnail} className='h-60 w-full rounded-sm object-cover' alt="img"/>
             <div className='flex gap-2 mt-3'>
             <span>{e.rating}</span>
