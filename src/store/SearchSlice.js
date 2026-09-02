@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     searchState: false,
     value: "",
-    showInput: null
+    showInput: null,
 }
 
 const searchSlice = createSlice({
