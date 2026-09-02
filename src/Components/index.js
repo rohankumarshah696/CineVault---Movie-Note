@@ -8,6 +8,7 @@ import Trending from './Trending'
 import Popular from "./Popular";
 import Hamburger from "./Header/Hamburger";
 import SearchInput from "./Header/SearchInput";
+import MovieSearch from "../searchMovies/MovieSearch";
 export{
     Nav,
     Hero,
@@ -18,5 +19,6 @@ export{
     Trending,
     Popular,
     Hamburger,
-    SearchInput
+    SearchInput,
+    MovieSearch
 }

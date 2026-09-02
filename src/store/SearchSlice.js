@@ -4,6 +4,7 @@ const initialState = {
     searchState: false,
     value: "",
     showInput: null,
+    searchStatus: false
 }
 
 const searchSlice = createSlice({
@@ -11,8 +12,14 @@ const searchSlice = createSlice({
     initialState,
     reducers: {
         searchState: (state) => {
-            if (!state.value) state.searchState = !state.searchState
-            else state.searchState = true
+            if (!state.value) {
+                state.searchState = !state.searchState
+                state.searchStatus=false
+            }
+            else {
+                state.searchState = true
+                state.searchStatus=true
+            }
         },
         showInput: (state) => {
             if (state.searchState) state.showInput = true
