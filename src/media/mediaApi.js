@@ -10,7 +10,7 @@ export async function fetchMovies(query ) {
         query: query,
       },
       headers: { Authorization: `Bearer ${MOVIE_ACCESS_TOKEN}` }
-    }).then(res => res.data);
+    }).then(res => res.data.results);
   } catch (error) {
     console.log(error.message)
   }

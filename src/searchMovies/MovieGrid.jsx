@@ -9,7 +9,7 @@ function MovieGrid({ searchContent, searchVal }) {
 
     async function getMovies() {
       const res = await fetchMovies(searchContent);
-      setMovies(res.results);
+      setMovies(res);
     }
 
     getMovies();
@@ -23,6 +23,7 @@ function MovieGrid({ searchContent, searchVal }) {
           overView={e.overview}
           image_URL={e.poster_path}
           title={e.title}
+          year={e.release_date}
         />
       ))}
     </div>

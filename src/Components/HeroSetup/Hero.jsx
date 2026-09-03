@@ -4,7 +4,7 @@ import Button from './Button'
 function Hero() {
 
     return (
-        <div className='relative bg-[url("./DummyAssets/Hero.jpg")] h-90  md:h-150 max-w-full  bg-cover'>
+        <div className=' bg-[url("./DummyAssets/Hero.jpg")] h-90  md:h-150 max-w-full  bg-cover'>
             <div className='p-4 flex flex-col absolute bottom-0 gap-2'>
                 <span className='text-xl text-yellow-500 uppercase'>—featured</span>
                 <span className='text-2xl text-green-600 font-bold'>Avengers : Doomsday</span>
