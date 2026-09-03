@@ -20,7 +20,7 @@ function Popular() {
   return (
     <div>
       <MovieHeader header='popular this week' description='Created picks from our editors.' />
-       <div className='flex gap-2 mt-2 h-fit w-fit overflow-x-auto px-2 scrollbar-none '>
+       <div className='flex gap-2 mt-2 h-fit  overflow-x-auto px-2 scrollbar-none '>
         {
           movies.map((movie) =>
             <MovieCards title={movie.title} year={movie.release_date} image_url={movie.poster_path} />

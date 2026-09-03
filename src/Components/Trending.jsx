@@ -20,7 +20,7 @@ function Trending() {
   return (
     <>
       <MovieHeader header='trending now' description='What everyone is watching.' />
-      <div className='flex gap-2 mt-2 h-fit w-fit overflow-x-auto px-2 scrollbar-none '>
+      <div className='flex gap-2 mt-2 h-fit overflow-x-auto px-2 scrollbar-none '>
         {
           movies.map((movie) =>
             <MovieCards title={movie.title} year={movie.release_date} image_url={movie.poster_path} />
