@@ -1,4 +1,5 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
+import { fetchFeaturedMovies } from '../../media/mediaApi';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -9,13 +10,25 @@ import Hero from './Hero';
 
 
 function HeroSection() {
-    const arr=[1,2,3]
+     const [movies, setMovies] = useState([])
+      useEffect(() => {
+        try {
+          const getFeaturedMovies = async () => {
+            const res = await fetchFeaturedMovies();
+            setMovies(res)
+            console.log(movies)
+          }
+          getFeaturedMovies()
+        } catch (err) {
+          return false
+        }
+      }, [])
   return (
     <>
           <Swiper
         slidesPerView={1}
         spaceBetween={30}
-        loop={true}
+        // loop={true}
         pagination={{
           clickable: true,
         }}
@@ -31,10 +44,10 @@ function HeroSection() {
         className="h-90  md:h-150 max-w-full rounded-xl"
       >
         {  
-        arr.map(()=> 
+        movies.map((movie)=> 
         (
         <SwiperSlide >
-            <Hero />
+            <Hero title={movie.title} release={movie.release_date} rating={movie.vote_average} img={movie.poster_path}/>
         </SwiperSlide>
        )
     )
