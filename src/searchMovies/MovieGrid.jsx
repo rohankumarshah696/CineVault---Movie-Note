@@ -1,7 +1,12 @@
 import React,{useState,useEffect} from 'react';
 import { fetchMovies } from '../media/mediaApi';
 import MovieSearch from './MovieSearch';
-function MovieGrid({ searchContent, searchVal }) {
+import { useSelector } from 'react-redux';
+import Loading from './Loading';
+function MovieGrid() {
+
+   const searchContent = useSelector(store => store.search.value);
+  const searchVal = useSelector(store => store.search.searchState)
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -16,8 +21,9 @@ function MovieGrid({ searchContent, searchVal }) {
   }, [searchContent, searchVal]);
 
   return (
-    <div className="flex h-fit w-full  flex-col gap-2">
-      {movies.map((e) => (
+    <div className="flex h-full w-full justify-center items-center  flex-col gap-2">
+      {
+      movies.length? movies.map((e) => (
         <MovieSearch
           key={e.id}
           overView={e.overview}
@@ -25,7 +31,8 @@ function MovieGrid({ searchContent, searchVal }) {
           title={e.title}
           year={e.release_date}
         />
-      ))}
+      ))  : <Loading />
+    }
     </div>
   );
 }

@@ -4,7 +4,8 @@ const initialState = {
     searchState: false,
     value: "",
     showInput: null,
-    searchStatus: false
+    searchStatus: false,
+    
 }
 
 const searchSlice = createSlice({

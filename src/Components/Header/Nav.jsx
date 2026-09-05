@@ -1,16 +1,22 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router';
 
 function Nav({ className }) {
   const select = useSelector(store => store.hamburgerMenu.value);
-  const [active, setActive] = useState('Home')
-  const navLinks = ["Home", "Discover", "Library"]
+  const navLinks = ["home", "discover", "library"]
+  const [active, setActive] = useState('home')
   return (
-    <nav className=''>
-      <ul className={`${className}   gap-3`}>
+    <nav className='hidden md:flex'>
+      <ul className={`${className} `}>
         {
           navLinks.map(e => (
-            <button className={`${active === e ? 'active' : ''} navs h-10 w-15 cursor-pointer hover:text-shadow-white`} key={e} onClick={() => setActive(e)}>{e}</button>
+
+            <Link to={`${e === "home" ? "" : `/${e}`}`} className={`${active === e ? 'active' : ''}  h-10 cursor-pointer hover:text-shadow-white`} key={e} onClick={() => {
+              setActive(e)
+            }}>
+              {e.toUpperCase()}
+            </Link>
           ))
         }
       </ul>

@@ -9,18 +9,16 @@ function Header() {
             <div className='flex px-5 justify-between items-center h-15 w-full'>
                 <Hamburger />
                 <Logo />
-                {
-                    nav ? <Nav className=" hidden md:flex " /> : null
-                }
+                <Nav className=" hidden md:flex gap-10" />
                 {
                     searchInput ? <SearchInput /> : null
                 }
                 <SearchIcon />
             </div>
-             <Nav
-                    className={`overflow-hidden flex justify-center items-center flex-col transition-all duration-500  ${nav ? "max-h-0 opacity-0 " : "max-h-40 opacity-100 py-1"
-                        }`}
-                />
+            <Nav
+                className={`overflow-hidden flex justify-center items-center flex-col transition-all duration-500  ${nav ? "max-h-0 opacity-0 " : "max-h-40 opacity-100 py-1"
+                    }`}
+            />
         </header>
     )
 }
