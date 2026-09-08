@@ -30,9 +30,11 @@ export async function fetchPopularMovies() {
 
 export async function fetchFeaturedMovies() {
   try {
-    return await axios.get("https://api.themoviedb.org/3/movie/upcoming", {
+    const res = await axios.get("https://api.themoviedb.org/3/movie/upcoming", {
       headers: { Authorization: `Bearer ${MOVIE_ACCESS_TOKEN}` }
     }).then(res => res.data.results);
+    console.log(res);
+    return res    
   } catch (error) {
     console.log(error.message)
   }
@@ -49,3 +51,19 @@ export async function fetchTrendingMovies() {
   }
   return false
 } 
+
+export async function fetchTrailer(movieId) {
+  const res = await axios.get(
+    `https://api.themoviedb.org/3/movie/${movieId}/videos`,
+    {
+      headers: {
+        Authorization: `Bearer ${MOVIE_ACCESS_TOKEN}`,
+        accept: "application/json",
+      },
+    }
+  );
+   const trailer =res.data.results.find(res=>
+    res.site === "YouTube" && res.type === "Trailer" && res.official === true 
+   ) 
+   return trailer;
+}

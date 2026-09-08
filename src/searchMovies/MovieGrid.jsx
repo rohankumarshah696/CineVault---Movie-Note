@@ -13,7 +13,7 @@ function MovieGrid() {
     if (!searchContent || !searchVal) return;
 
     async function getMovies() {
-      const res = await fetchMovies(searchContent);
+      const res = await fetchMovies(searchContent);  
       setMovies(res);
     }
 

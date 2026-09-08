@@ -47,7 +47,7 @@ function HeroSection() {
         movies.map((movie)=> 
         (
         <SwiperSlide >
-            <Hero title={movie.title} release={movie.release_date} rating={movie.vote_average} img={movie.poster_path}/>
+            <Hero movieId={movie.id} title={movie.title} release={movie.release_date} rating={movie.vote_average} img={movie.poster_path}/>
         </SwiperSlide>
        )
     )

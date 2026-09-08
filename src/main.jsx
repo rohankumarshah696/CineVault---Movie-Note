@@ -7,8 +7,7 @@ import './index.css'
 import App from './App.jsx'
 import { HomePage,Discover,Library,MovieGrid } from './Components/index.js'
 
-
-const router = createBrowserRouter([
+ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
