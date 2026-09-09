@@ -14,7 +14,12 @@ import HomePage from "./pages/HomePage"
 import Discover from "./pages/Discover"
 import Library from "./pages/Library"
 import MovieGrid from "../searchMovies/MovieGrid";
-export{
+import Trailer from "./MovieTrailer/Trailer";
+import AddButtons from "./MovieTrailer/AddButtons";
+import AlsoLike from "./MovieTrailer/AlsoLike";
+import Desc from "./MovieTrailer/Desc"
+import TrailerPage from "./pages/TrailerPage";
+export {
     Nav,
     Hero,
     Logo,
@@ -30,5 +35,10 @@ export{
     Discover,
     Library,
     MovieGrid,
-    HeroSection
+    HeroSection,
+    Trailer,
+    AddButtons,
+    AlsoLike,
+    Desc,
+    TrailerPage
 }

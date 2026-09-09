@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from './Button'
 import { fetchTrailer } from "../../media/mediaApi"
+import { useNavigate } from 'react-router';
 function Hero({
     title,
     release,
@@ -8,14 +9,11 @@ function Hero({
     img,
     movieId
 }) {
-
+     const navigate=useNavigate()
     const showTrailer = async () => {
-  const trailer = await fetchTrailer(movieId);
-  if (trailer) {
-    window.open(
-      `https://www.youtube.com/watch?v=${trailer.key}`,
-      "_blank"
-    );
+  const trailerKey = await fetchTrailer(movieId);
+  if (trailerKey) {
+     navigate(`movie/${movieId}/${trailerKey}`)
   }
 };
 

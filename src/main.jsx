@@ -5,7 +5,7 @@ import { createRoot } from 'react-dom/client'
 import { createBrowserRouter,RouterProvider } from 'react-router'
 import './index.css'
 import App from './App.jsx'
-import { HomePage,Discover,Library,MovieGrid } from './Components/index.js'
+import { HomePage,Discover,Library,MovieGrid, TrailerPage } from './Components/index.js'
 
  const router = createBrowserRouter([
   {
@@ -27,6 +27,10 @@ import { HomePage,Discover,Library,MovieGrid } from './Components/index.js'
       {
         path: "search",
         element: <MovieGrid />
+      },
+      {
+        path: "movie/:movieId/:trailerKey",
+        element: <TrailerPage />
       }
     ]
   }

@@ -33,7 +33,6 @@ export async function fetchFeaturedMovies() {
     const res = await axios.get("https://api.themoviedb.org/3/movie/upcoming", {
       headers: { Authorization: `Bearer ${MOVIE_ACCESS_TOKEN}` }
     }).then(res => res.data.results);
-    console.log(res);
     return res    
   } catch (error) {
     console.log(error.message)
@@ -65,5 +64,19 @@ export async function fetchTrailer(movieId) {
    const trailer =res.data.results.find(res=>
     res.site === "YouTube" && res.type === "Trailer" && res.official === true 
    ) 
-   return trailer;
+   return trailer.key;
+}
+
+export async function fetchMovieInformation(movieId){
+   try {
+    const res= await axios.get(`https://api.themoviedb.org/3/movie/${movieId}`, {
+      params:{
+        api_key : MOVIE_API_KEY
+      }
+    })
+    return res.data;
+  } catch (error) {
+    console.log(error.message)
+  }
+  return false
 }

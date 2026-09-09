@@ -16,7 +16,6 @@ function HeroSection() {
           const getFeaturedMovies = async () => {
             const res = await fetchFeaturedMovies();
             setMovies(res)
-            console.log(movies)
           }
           getFeaturedMovies()
         } catch (err) {
