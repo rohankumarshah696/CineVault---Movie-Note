@@ -10,7 +10,7 @@ function App() {
     <>
       <Header />
       {
-        searchStatus ? <MovieGrid /> : <Outlet />
+       <Outlet />
       }
     </>
   )

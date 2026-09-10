@@ -21,10 +21,11 @@ function MovieGrid() {
   }, [searchContent, searchVal]);
 
   return (
-    <div className="flex h-full w-full justify-center items-center  flex-col gap-2">
+    <div className="flex h-full w-full justify-center items-center  flex-col gap-2" >
       {
       movies.length? movies.map((e) => (
         <MovieSearch
+        movieId={e.id}
           key={e.id}
           overView={e.overview}
           image_URL={e.poster_path}

@@ -1,24 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { CiSearch } from "react-icons/ci";
 import { useDispatch, useSelector } from 'react-redux';
 import { searchState } from '../../store/SearchSlice';
 import { useNavigate } from 'react-router';
-
+import { useRef } from 'react';
 
 function SearchIcon() {
-  const searchStatus = useSelector(store => store.search.searchStatus)
+  const searchStatus = useSelector(store => store.search.searchState)
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  
-  const showMovieGrid=()=>{
-    
+const firstRender = useRef(true)
+  useEffect(()=>{
+
+     if (firstRender.current) {
+    firstRender.current = false
+    return
   }
 
+   if (searchStatus) {
+    navigate("/search")
+  } else {
+    navigate("/")
+  }
+  },[searchStatus])
+ 
  function handleClick() {
    dispatch(searchState())
-  //  searchStatus? navigate("/search") : navigate(-1)
   }
-
 
   return (
     <button className=' rounded-xl cursor-pointer text-white text-2xl w-fit' onClick={() => {
@@ -30,3 +38,4 @@ function SearchIcon() {
 }
 
 export default SearchIcon
+
