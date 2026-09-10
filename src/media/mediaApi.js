@@ -73,8 +73,8 @@ export async function fetchMovieInformation(movieId){
       params:{
         api_key : MOVIE_API_KEY
       }
-    })
-    return res.data;
+    }).then(res=>res.data)
+    return res;
   } catch (error) {
     console.log(error.message)
   }
