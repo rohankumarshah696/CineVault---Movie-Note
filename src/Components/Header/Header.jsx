@@ -15,8 +15,12 @@ function Header() {
                 }
                 <SearchIcon />
             </div>
+           { 
+           console.log(nav)
+           }
+            
             <Nav
-                className={`overflow-hidden flex justify-center items-center flex-col transition-all duration-500  ${nav ? "max-h-0 opacity-0 " : "max-h-40 opacity-100 py-1"
+                className={`overflow-hidden md:hidden  flex justify-center items-center flex-col transition-all duration-500  ${nav ? "max-h-0 opacity-0 " : " max-h-40 opacity-100 py-1 "
                     }`}
             />
         </header>
