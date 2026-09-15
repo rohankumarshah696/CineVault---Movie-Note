@@ -11,8 +11,7 @@ const Desc = () => {
             setMovie(res);
         }
         fetchMovie()
-    }, [])
-    console.log(movie);
+    }, [movieId])
     return (
         <div className='h-fit w-full p-4 flex flex-col gap-2 '>
             <h3 className='text-2xl md:text-5xl text-white'>{movie.title}</h3>

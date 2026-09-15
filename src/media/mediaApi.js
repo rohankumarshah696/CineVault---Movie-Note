@@ -52,6 +52,8 @@ export async function fetchTrendingMovies() {
 } 
 
 export async function fetchTrailer(movieId) {
+  console.log("running");
+  
   const res = await axios.get(
     `https://api.themoviedb.org/3/movie/${movieId}/videos`,
     {
@@ -61,6 +63,9 @@ export async function fetchTrailer(movieId) {
       },
     }
   );
+  console.log('ran');
+  console.log(res.data.results);
+  
    const trailer =res.data.results.find(res=>
     res.site === "YouTube" && res.type === "Trailer" && res.official === true 
    ) 
@@ -80,3 +85,14 @@ export async function fetchMovieInformation(movieId){
   }
   return false
 }
+
+export async function fetchSimilarMovies(movieId) {
+  try {
+    return await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/recommendations`, {
+      headers: { Authorization: `Bearer ${MOVIE_ACCESS_TOKEN}` }
+    }).then(res => res.data.results);
+  } catch (error) {
+    console.log(error.message)
+  }
+  return false
+} 

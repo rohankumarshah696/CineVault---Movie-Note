@@ -19,8 +19,6 @@ const firstRender = useRef(true)
 
    if (searchStatus) {
     navigate("/search")
-  } else {
-    navigate("/")
   }
   },[searchStatus])
  
