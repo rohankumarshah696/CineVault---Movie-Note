@@ -18,6 +18,7 @@ import Trailer from "./MovieTrailer/Trailer";
 import AddButtons from "./MovieTrailer/AddButtons";
 import AlsoLike from "./MovieTrailer/AlsoLike";
 import Desc from "./MovieTrailer/Desc"
+import Footer from "./Footer/Footer";
 import TrailerPage from "./pages/TrailerPage";
 export {
     Nav,
@@ -40,5 +41,6 @@ export {
     AddButtons,
     AlsoLike,
     Desc,
-    TrailerPage
+    TrailerPage,
+    Footer
 }
