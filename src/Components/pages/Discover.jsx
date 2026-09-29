@@ -1,10 +1,11 @@
 import React from 'react'
-
+import {DisHero,Section} from '../index'
 const Discover = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+    <DisHero/>
+    <Section />
+    </>
   )
 }
 

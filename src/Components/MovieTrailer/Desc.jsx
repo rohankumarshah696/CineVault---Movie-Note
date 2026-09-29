@@ -17,7 +17,7 @@ const Desc = () => {
             <h3 className='text-2xl md:text-5xl text-white'>{movie.title}</h3>
             <span className='text-gray-600'>{movie.tagline}</span>
             <div className='flex gap-2 md:gap-4 md:text-xl md:flex-wrap text-red-600'>
-                <span>{movie.vote_average}</span>
+                <span>⭐{movie.vote_average}</span>
                 <span>{movie.release_date}</span>
                 <span>{Math.floor(movie.runtime / 60)}hr {movie.runtime % 60}min</span>
                 <span>Dir. XXXXX</span>

@@ -20,6 +20,8 @@ import AlsoLike from "./MovieTrailer/AlsoLike";
 import Desc from "./MovieTrailer/Desc"
 import Footer from "./Footer/Footer";
 import TrailerPage from "./pages/TrailerPage";
+import DisHero from "../Discover/DisHero";
+import Section from "../Discover/Section";
 export {
     Nav,
     Hero,
@@ -42,5 +44,7 @@ export {
     AlsoLike,
     Desc,
     TrailerPage,
-    Footer
+    Footer,
+    DisHero,
+    Section
 }
