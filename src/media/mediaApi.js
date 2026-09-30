@@ -96,3 +96,48 @@ export async function fetchSimilarMovies(movieId) {
   }
   return false
 } 
+
+export async function fetchMovieGenreIds(){
+  try {
+    return await axios.get(`https://api.themoviedb.org/3/genre/movie/list`, {
+      headers: { Authorization: `Bearer ${MOVIE_ACCESS_TOKEN}` }
+    }).then(res => res.data.results);
+  } catch (error) {
+    console.log(error.message)
+  }
+  return false
+}
+export async function fetchTVGenreIds(){
+  try {
+    return await axios.get(`https://api.themoviedb.org/3/genre/tv/list`, {
+      headers: { Authorization: `Bearer ${MOVIE_ACCESS_TOKEN}` }
+    }).then(res => res.data.results);
+  } catch (error) {
+    console.log(error.message)
+  }
+  return false
+}
+export async function DiscoverMovies(page){
+  try {
+    return await axios.get(`https://api.themoviedb.org/3/discover/movie`, {
+      headers: { Authorization: `Bearer ${MOVIE_ACCESS_TOKEN}` },
+      query:{page : page}
+    }).then(res => res.data.results);
+  } catch (error) {
+    console.log(error.message)
+  }
+  return false
+}
+export async function DiscoverTvShows(page){
+  try {
+    return await axios.get(`https://api.themoviedb.org/3/discover/tv`, {
+      headers: { Authorization: `Bearer ${MOVIE_ACCESS_TOKEN}` },
+      query:{page : page}
+    }).then(res => res.data.results);
+  } catch (error) {
+    console.log(error.message)
+  }
+  return false
+}
+
+

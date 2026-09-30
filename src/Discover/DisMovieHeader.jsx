@@ -11,8 +11,6 @@ function DisMovieHeader({
       <span className='uppercase text-2xl'> Explore {header}</span>
       <span className='text-gray-500'>12 titles</span>
       </div>
-      
-    
   )
 }
 export default DisMovieHeader

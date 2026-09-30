@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import Select from './Select'
 import DisMovieHeader from './DisMovieHeader'
+import Movies from './Movies'
 const Section = () => {
   const [state, setState] = useState('Movies')
   const [genre, setGenre] = useState("All Genres");
-  const [rating, setRating] = useState("All Years");
-  const [year, setYear] = useState("All Ratings");
+  const [rating, setRating] = useState("All Ratings");
+  const [year, setYear] = useState("All Years");
   const [popularity, setPopularity] = useState();
   const selectOptions = [
     {
@@ -78,6 +79,7 @@ const Section = () => {
         </div>
       </div>
       <DisMovieHeader header={state} />
+       <Movies header={state} genre={genre} rating={rating} year={year} popularity={popularity}/>
     </>
   )
 }
