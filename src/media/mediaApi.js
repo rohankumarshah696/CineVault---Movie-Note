@@ -99,9 +99,10 @@ export async function fetchSimilarMovies(movieId) {
 
 export async function fetchMovieGenreIds(){
   try {
-    return await axios.get(`https://api.themoviedb.org/3/genre/movie/list`, {
+     const res= await axios.get(`https://api.themoviedb.org/3/genre/movie/list`, {
       headers: { Authorization: `Bearer ${MOVIE_ACCESS_TOKEN}` }
-    }).then(res => res.data.results);
+    }).then(res => res.data.genres);
+    return res;
   } catch (error) {
     console.log(error.message)
   }

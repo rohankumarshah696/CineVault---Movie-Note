@@ -43,7 +43,7 @@ const Section = () => {
       name: "popularity",
       values: [
         "Popularity",
-        " Rating (High)",
+        "Rating (High)",
         "Rating (Low)",
         "Newest",
         "Oldest"
