@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Select = ({ options, onChange }) => {
+const Select = ({ header,options, onChange }) => {
 
     const [open, setOpen] = useState(false);
     const [selected, setSelected] = useState(options.values[0]);

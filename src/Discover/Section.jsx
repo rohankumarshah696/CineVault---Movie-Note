@@ -11,14 +11,23 @@ const Section = () => {
   const selectOptions = [
     {
       name: "genre",
-      values: [
+      values: state=='Movies'? [
         "All Genres",
         "Action",
         "Drama",
         "Horror",
         "Sci-Fi",
         "Thriller"
-      ],
+      ]:
+      [
+        "All Genres",
+        "Animation",
+        "Comedy",
+        "Crime",
+        "Drama",
+        "Family",
+        "Kids"
+      ]
     },
     {
       name: "year",
@@ -50,13 +59,14 @@ const Section = () => {
       ]
     }
   ]
+  
 
   const HandleClick = (name, val) => {
     if (name == "genre") setGenre(val)
     else if (name == "year") setYear(val)
     else if (name == "rating") setRating(val)
     else if (name == "popularity") setPopularity(val)
-  console.log(name+':'+val)
+    console.log(name + ':' + val)
   }
 
   return (
@@ -73,13 +83,13 @@ const Section = () => {
         <div className=' w-fit h-fit flex gap-3 flex-wrap'>
           {
             selectOptions.map((option) => (
-              <Select options={option} onChange={(val)=>HandleClick(option.name, val)} />
+              <Select options={option} onChange={(val) => HandleClick(option.name, val)} />
             ))
           }
         </div>
       </div>
       <DisMovieHeader header={state} />
-       <Movies header={state} genre={genre} rating={rating} year={year} popularity={popularity}/>
+      <Movies header={state} genre={genre} rating={rating} year={year} popularity={popularity} />
     </>
   )
 }
