@@ -55,7 +55,7 @@ const Movies = (
           )
         }
       </div>
-      <div className='flex items-center justify-between w-full px-8 my-2'>
+      <div className='flex items-center justify-center gap-10 w-full px-8 my-2'>
         <Button onClick={handlePrev}>Prev</Button>
         <button className='bg-gray-700 px-4 py-1 text-xl rounded-xl pointer-events-none'>{page}</button>
         <Button onClick={handleNext}> Next</Button>
@@ -65,3 +65,5 @@ const Movies = (
 }
 
 export default Movies
+
+

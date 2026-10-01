@@ -22,6 +22,10 @@ import Footer from "./Footer/Footer";
 import TrailerPage from "./pages/TrailerPage";
 import DisHero from "../Discover/DisHero";
 import Section from "../Discover/Section";
+import LibHeader from "./Library/LibHeader";
+import TotalSelected from "./Library/TotalSelected";
+import LibSection from "./Library/LibSection";
+import Contents from "./Library/Contents";
 export {
     Nav,
     Hero,
@@ -46,5 +50,9 @@ export {
     TrailerPage,
     Footer,
     DisHero,
-    Section
+    Section,
+    LibHeader,
+    TotalSelected,
+    LibSection,
+    Contents
 }
