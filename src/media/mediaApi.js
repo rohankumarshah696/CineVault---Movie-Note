@@ -121,7 +121,7 @@ export async function DiscoverMovies(page){
   try {
     return await axios.get(`https://api.themoviedb.org/3/discover/movie`, {
       headers: { Authorization: `Bearer ${MOVIE_ACCESS_TOKEN}` },
-      query:{page : page}
+      params:{page : page}
     }).then(res => res.data.results);
   } catch (error) {
     console.log(error.message)
@@ -132,7 +132,7 @@ export async function DiscoverTvShows(page){
   try {
     return await axios.get(`https://api.themoviedb.org/3/discover/tv`, {
       headers: { Authorization: `Bearer ${MOVIE_ACCESS_TOKEN}` },
-      query:{page : page}
+      params:{page : page}
     }).then(res => res.data.results);
   } catch (error) {
     console.log(error.message)

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import MovieCards from '../Components/MoviesSetup/MovieCards.jsx'
+import Button from './Button.jsx'
 import {fetchPopularMovies,DiscoverTvShows,DiscoverMovies, fetchMovieGenreIds, fetchTVGenreIds} from '../media/mediaApi.js'
 const Movies = (
     {
@@ -12,11 +13,11 @@ const Movies = (
 ) => {
     const [movies,setMovies]=useState([])
     const [page,setPage] = useState(1)
-    function handle(){
+    function handleNext(){
     setPage(prev=>prev+1)
     }
     function handlePrev(){
-    setPage(prev=>prev-1)
+    setPage(prev=>prev-1 ==0 ? 1 : prev-1)
     }
     useEffect(()=>{
         try{
@@ -45,7 +46,10 @@ const Movies = (
           )
           }
       </div>
-      <button onClick={handlePrev}>Prev</button><button onClick={handleNext}> next</button>
+      <div className='flex items-center justify-between w-full px-8 my-2'>
+      <Button className='bg-blue-700 px-4 py-1 rounded-xl' onClick={handlePrev}>Prev</Button>
+      <Button onClick={handleNext}> Next</Button>
+    </div>
     </div>
   )
 }
