@@ -12,8 +12,8 @@ const Contents = ({ state }) => {
                 state == "Movies" ?
                     movies.map((movie) =>
                         <MovieCards movie={movie} key={movie.id} movieId={movie.id} title={movie.title} year={movie.release_date} image_url={movie.poster_path} />
-                    ) : tvShows.map((movie) =>
-                        <MovieCards movie={movie} key={movie.id} movieId={movie.id} title={movie.title} year={movie.release_date} image_url={movie.poster_path} />
+                    ) : tvShows.map((tv) =>
+                        <MovieCards movie={tv} key={tv.id} movieId={tv.id} title={tv.title} year={tv.first_air_date} image_url={tv.poster_path} />
                     )
             }
         </div>
