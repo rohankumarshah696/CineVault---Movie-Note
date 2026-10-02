@@ -51,7 +51,7 @@ const Movies = (
       <div className='flex flex-wrap gap-4 mt-2 h-fit items-center justify-center overflow-x-auto px-2 scrollbar-none'>
         {
           movies.map((movie) =>
-            (<MovieCards key={movie.id} movieId={movie.id} title={movie.title ? movie.title : movie.name} year={movie.release_date ? movie.release_date : movie.first_air_date} image_url={movie.poster_path} />)
+            (<MovieCards movie={movie} key={movie.id} movieId={movie.id} title={movie.title ? movie.title : movie.name} year={movie.release_date ? movie.release_date : movie.first_air_date} image_url={movie.poster_path} />)
           )
         }
       </div>

@@ -1,22 +1,21 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { fetchPopularMovies } from '../../media/mediaApi'
+import { useSelector } from 'react-redux'
 import MovieCards from '../MoviesSetup/MovieCards'
 const Contents = () => {
+    const savedMovies=useSelector(store=>store.watchList.values)
     const [movies, setMovies] = useState([])
     useEffect(() => {
         try {
-            const getPopularMovies = async () => {
-                const res = await fetchPopularMovies()
-                console.log('ok');
-                setMovies(res)
+             setMovies(savedMovies)
             }
-            getPopularMovies()
-        } catch (err) {
+            
+         catch (err) {
             return false
         }
 
     }, [])
+
     return (
         <div className='h-fit w-full flex gap-5 items-center justify-center flex-wrap px-8'>
             {
