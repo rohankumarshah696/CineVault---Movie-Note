@@ -20,7 +20,6 @@ const Desc = () => {
                 <span>⭐{movie.vote_average}</span>
                 <span>{movie.release_date}</span>
                 <span>{Math.floor(movie.runtime / 60)}hr {movie.runtime % 60}min</span>
-                <span>Dir. XXXXX</span>
             </div>
             <div className='flex gap-2'>
                 {

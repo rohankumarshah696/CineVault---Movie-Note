@@ -8,7 +8,7 @@ const Library = () => {
       <LibSection />
       <TotalSelected />
       </div>
-      <Contents />
+      
     </>
   )
 }

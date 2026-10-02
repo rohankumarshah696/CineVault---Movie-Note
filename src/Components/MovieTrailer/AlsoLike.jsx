@@ -27,7 +27,7 @@ const AlsoLike = () => {
         <div className='flex gap-2 mt-2 h-fit  overflow-x-auto px-2 scrollbar-none '>
           {
             movies.map((movie) =>
-              <MovieCards title={movie.title} movieId={movie.id} year={movie.release_date} image_url={movie.poster_path} />
+              <MovieCards movie={movie} title={movie.title} movieId={movie.id} year={movie.release_date} image_url={movie.poster_path} />
             )}
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import Contents from './Contents'
 const LibSection = () => {
   const [state,setState] = useState('Movies')
   return (
@@ -13,7 +14,7 @@ const LibSection = () => {
             setState('TV Shows')
           }}>TV Shows</button>
         </div>
-        
+        <Contents state={state}/>
       </div>
       
     </>
