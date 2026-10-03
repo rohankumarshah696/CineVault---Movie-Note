@@ -2,7 +2,8 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import MovieCards from '../MoviesSetup/MovieCards'
-const Contents = ({ state }) => {
+const Contents = ({  }) => {
+    const state = useSelector(store => store.watchList.stateVal)
     const items = useSelector(store => store.watchList.values)
     const movies = items.filter(movie => movie.release_date)
     const tvShows = items.filter(tvShows => tvShows.first_air_date)
