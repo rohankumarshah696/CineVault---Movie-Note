@@ -13,10 +13,14 @@ const watchListSlice = createSlice({
             state.stateVal = action.payload
         },
         addToWatchList: (state, action) => {
-            if (!state.values.includes(action.payload))
+            if (!state.values.some(movie => movie.id === action.payload.id)) {
                 state.values = [...state.values, action.payload]
-            localStorage.setItem("items", JSON.stringify(state.values))
-            console.log(state.values);
+            }
+
+            localStorage.setItem(
+                "items",
+                JSON.stringify(state.values)
+            )
         },
         removeWatchList: (state, action) => {
             if (state.values.some(movie => movie.id === action.payload.id)) {
@@ -36,5 +40,5 @@ const watchListSlice = createSlice({
 }
 )
 
-export const { addToWatchList, removeWatchList,setMovie_Tv } = watchListSlice.actions
+export const { addToWatchList, removeWatchList, setMovie_Tv } = watchListSlice.actions
 export default watchListSlice.reducer

@@ -5,6 +5,7 @@ import { setMovie_Tv } from '../../store/WatchListSlice'
 import { useDispatch } from 'react-redux'
 const LibSection = () => {
   const [state, setState] = useState('Movies')
+  
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(setMovie_Tv(state))

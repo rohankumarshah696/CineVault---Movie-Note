@@ -26,6 +26,7 @@ import LibHeader from "./Library/LibHeader";
 import TotalSelected from "./Library/TotalSelected";
 import LibSection from "./Library/LibSection";
 import Contents from "./Library/Contents";
+import WatchListButton from "./WatchListButton";
 export {
     Nav,
     Hero,
@@ -54,5 +55,6 @@ export {
     LibHeader,
     TotalSelected,
     LibSection,
-    Contents
+    Contents,
+    WatchListButton
 }
