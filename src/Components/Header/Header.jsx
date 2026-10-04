@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Hamburger, Logo, Nav, SearchIcon, SearchInput } from '../index'
 import { useSelector } from 'react-redux'
-function Header() {
+function Header({}) {
     const nav = useSelector(store => store.hamburgerMenu.value)
     const searchInput = useSelector(store => store.search.searchState)
     return (
-        <header className='h-fit w-full flex flex-col'>
+        <header className={`h-fit w-full flex bg-black flex-col top-0 z-10 sticky`}>
             <div className='flex px-5 justify-between items-center h-15 w-full'>
                 <Hamburger />
                 <Logo />

@@ -34,7 +34,7 @@ function Hero({
                     <li><span>{release}</span></li>
                 </ul>
                 <div className='flex flex-col sm:flex-row gap-4'>
-                    <Button className='py-2 px-4 hover:-translate-y-0.5 duration-200 w-fit rounded-sm bg-yellow-500 text-black cursor-pointer' onClick={showTrailer}> ▶️ Watch Trailer</Button>
+                    <Button className='py-2 px-4 hover:-translate-y-0.5 duration-200 w-fit rounded-sm font-bold bg-yellow-500 text-black cursor-pointer' onClick={showTrailer}> ▶️ Watch Trailer</Button>
                     <WatchListButton movie={movie} type="trailer"/>
                 </div>
             </div>
