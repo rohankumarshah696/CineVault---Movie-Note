@@ -25,6 +25,7 @@ function MovieGrid() {
       {
       movies.length? movies.map((e) => (
         <MovieSearch
+        movie={e}
         movieId={e.id}
           key={e.id}
           overView={e.overview}

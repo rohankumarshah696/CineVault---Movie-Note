@@ -34,7 +34,7 @@ const Desc = () => {
                 {movie.overview}
             </p>
             <div className='flex gap-4'>
-             <WatchListButton movie={movie}/>
+             <WatchListButton movie={movie} type="trailer"/>
             </div>
         </div>
     )
