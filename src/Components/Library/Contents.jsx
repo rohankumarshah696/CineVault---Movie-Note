@@ -8,7 +8,7 @@ const Contents = ({  }) => {
     const movies = items.filter(movie => movie.release_date)
     const tvShows = items.filter(tvShows => tvShows.first_air_date)
     return (
-        <div className='h-fit w-full flex gap-5 items-center justify-center flex-wrap px-8'>
+        <div className='h-full w-full flex  flex-wrap px-2 gap-4'>
             {
                 state == "Movies" ?
                     movies.map((movie) =>
