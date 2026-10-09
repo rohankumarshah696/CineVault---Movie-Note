@@ -11,7 +11,7 @@ const Desc = () => {
         const fetchMovie = async () => {
             const res = await fetchMovieInformation(movieId);
             setMovie(res)
-            setLoading(false)
+                setLoading(false)
         }
         fetchMovie();
     }, [movieId])
