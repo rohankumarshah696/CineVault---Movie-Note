@@ -29,7 +29,7 @@ function Hero({
             <div className='p-4 flex flex-col absolute bottom-0 gap-2'>
                 <span className='text-xl text-yellow-500 uppercase'>—featured</span>
                 <span className='text-2xl text-green-600 font-bold'>{title}</span>
-                <ul className='flex gap-8 list-disc mx-4'>
+                <ul className='flex gap-8 text-white list-disc mx-4'>
                     <li><span>{rating}</span></li>
                     <li><span>{release}</span></li>
                 </ul>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import MovieCards from '../Components/MoviesSetup/MovieCards.jsx'
 import Button from './Button.jsx'
 import { checkGenre, checkPopularity, checkRating, checkYear, getMoviesOrTvs } from './Checking.js'
+import MovieCardsSkeleton from '../Components/MoviesSetup/MovieCardsSkeleton.jsx'
 let headerval = 'Movies'
 const Movies = (
   {
@@ -14,7 +15,7 @@ const Movies = (
 ) => {
   const [movies, setMovies] = useState([])
   const [page, setPage] = useState(1)
-
+  const [loading,setLoading]=useState(true)
   function handleNext() {
     setPage(prev => prev + 1)
   }
@@ -35,6 +36,7 @@ const Movies = (
         res = checkRating(header, res, rating);
         res = await checkGenre(header, res, genre);
         setMovies(res)
+        setLoading(false)
       }
       get()
     } catch (err) {
@@ -49,7 +51,11 @@ const Movies = (
   return (
     <div>
       <div className='flex flex-wrap gap-4 mt-2 h-fit items-center justify-center overflow-x-auto px-2 scrollbar-none'>
-        {
+        {loading? 
+        Array(10).fill(0).map((_, index) => (
+              <MovieCardsSkeleton key={index} />
+            ))
+            :
           movies.map((movie) =>
             (<MovieCards movie={movie} key={movie.id} movieId={movie.id} title={movie.title ? movie.title : movie.name} year={movie.release_date ? movie.release_date : movie.first_air_date} image_url={movie.poster_path} />)
           )

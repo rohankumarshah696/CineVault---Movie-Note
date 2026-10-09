@@ -11,7 +11,7 @@ function MovieCards({
   title,
   year,
   image_url,
-  movieId
+  movieId,
 }) {
   const savedMovies = useSelector(store => store.watchList.values)
   const [add, setAdd] = useState(false)
