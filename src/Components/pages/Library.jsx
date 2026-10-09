@@ -3,7 +3,7 @@ import {LibHeader,TotalSelected,LibSection,Contents} from '../index'
 const Library = () => {
   return (
     <>
-    <div className='flex flex-wrap md:justify-between items-center px-5'>
+    <div className='flex flex-wrap md:justify-between items-center px-5 text-white'>
       <LibHeader />
       <LibSection />
       <TotalSelected />
